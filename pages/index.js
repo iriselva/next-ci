@@ -1,30 +1,21 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
+import TodoList from "../component/TodoList";
 
-export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+export default function Home({ storedTodos }) {
+    return (
+        <div className={styles.container}>
+            <Head>
+                <title>Todo list</title>
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Hello Next.js Heroku and Circle Ci!
-        </h1>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+            <main className={styles.main}>
+                <TodoList />
+            </main>
+            <footer className={styles.footer}>
+                <p className={styles.description}>This project uses next.js, heroku, circle.ci, webhook and unit testing</p>
+            </footer>
+        </div>
+    );
 }
